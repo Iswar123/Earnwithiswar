@@ -1,11 +1,11 @@
 <?php
     session_start();
     if (isset($_SESSION["SESSION_EMAIL"])) {
-        header("Location: welcome.php");
+        header("Location: welcome.html");
     }
 
     if (isset($_POST["login"])) {
-        include 'config.php';
+        include 'config.html';
         
         $email = mysqli_real_escape_string($conn, $_POST["email"]);
         $password = mysqli_real_escape_string($conn,($_POST["password"]));
@@ -24,7 +24,7 @@
                 mysqli_query($conn, "UPDATE users SET limit_used='{$x}' WHERE email='{$email}'");
 
                 $_SESSION["SESSION_EMAIL"] = $email;
-                header("Location: welcome.php");
+                header("Location: welcome.html");
             }
         }else {
             echo "<script>alert('Your Login details is incorrect.');</script>";
@@ -54,7 +54,7 @@
                 <input type="password" name="password" id="password" class="input" placeholder="Enter your password" required>
             </div>
             <button class="btn" name="login">Login</button>
-            <p>Create Account! <a href="register.php">Register</a>.</p>
+            <p>Create Account! <a href="register.html">Register</a>.</p>
         </form>
     </div>
 </body>
