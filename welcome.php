@@ -1,7 +1,7 @@
 <?php
     session_start();
     if (!isset($_SESSION["SESSION_EMAIL"])) {
-        header("Location: index.php");
+        header("Location: index.html");
     }
     include 'config.php';
 ?>
@@ -24,7 +24,7 @@
             if (mysqli_num_rows($result) > 0) {
                 $row = mysqli_fetch_assoc($result);
         ?>
-        <h2>Welcome, <?php echo $row["name"]; ?> <span class="form"><p><a href="logout.php">Logout</a></p></span></h2>
+        <h2>Welcome, <?php echo $row["name"]; ?> <span class="form"><p><a href="logout.html">Logout</a></p></span></h2>
         <?php } ?>
     </div>
 </body>
