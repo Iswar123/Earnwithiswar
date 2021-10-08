@@ -1,1 +1,1 @@
-# Earnwithiswar
+# EarningZone
